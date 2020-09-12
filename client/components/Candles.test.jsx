@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 
 import FETCH_CANDLES from '../actions'
 import store from '../store'
-import App from './App'
+import Candles from './Candles'
 
 jest.spyOn(store, 'getState')
 jest.spyOn(store, 'dispatch')
@@ -20,7 +20,7 @@ beforeEach(() => {
 })
 
 test('displays candles names', () => {
-    render(<Provider store={store}><App /></Provider>)
+    render(<Provider store={store}><Candles /></Provider>)
     expect.assertions(2)
     let candles = screen.getAllByRole('listitem')
     expect(candles.length).toBe(3)
