@@ -1,0 +1,416 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+/*everything above are default setting */
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+  
+.navcontainer{
+    width: 95%;
+    min-height: 6vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    transition: all .7s ease-in;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    position: sticky;
+    top: 0;
+    background-color:white;
+    z-index: 1;
+    margin: 2rem;
+}
+  
+.navtitle:hover {
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    padding-bottom: 3px;
+    transition: transform 250ms ease-in-out;
+}
+
+.navlogo {
+    height: 50px;
+}
+
+
+.menu {
+    margin: 30px 30px 0 0;
+    width: 95%;
+    min-height: 6vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+
+@media only screen and (max-width: 500px) {
+    label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu {
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        border-bottom: 1px solid rgb(187, 187, 187);
+        margin: 0;
+    }
+
+    #toggle: checked + .menu {
+        display: block;
+    }
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+.pageHeader {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.mainHeader {
+ font-family: sacramento;
+ font-weight: 200;
+ font-size: 6rem;
+ color: rgb(133, 132, 132);
+ line-height: 1;
+}
+
+.mainSubHeader {
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-top: 0;
+    color: 	#66e4e5;
+    text-transform: uppercase;
+    line-height: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.headerBack {
+    background:  linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
+    padding: 20px;
+}
+
+h4 {
+    color: black;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+ }
+
+
+.linkimg img {
+    height: 25px;
+    width: 25px;
+    margin: 0px 5px;
+}
+
+
+.productContainer {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 33% 33% 33%;
+    justify-self: center;
+    margin: 20px;
+}
+
+.product {
+    flex: 1;
+    margin: 20px
+
+}
+
+.productImage {
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16) 
+    transition: all ease-in-out .2s;
+    position: relative;
+    overflow: hidden;
+    margin: 20px
+}
+
+.productImage:hover{
+	filter: brightness(.75);
+    transform: scale(1.2);
+    /* box-shadow: 0 8px 12px 0 rgba(34, 60,80, .16) */
+}
+
+.productHeader {
+    margin-bottom: 0px;
+}
+
+.productPrice {
+    margin-top: 0px;
+    text-decoration: none;
+    color: black;
+}
+
+/* styling for individual items */
+
+.singleContainer {
+    display: grid;
+    width: 100%;
+    justify-content: space-around;
+    grid-template-columns: 50% 50%;
+    justify-self: center;
+    justify-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.infoContainer {
+    justify-content: flex-start;
+}
+
+.singleHeader {
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.singlePrice {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+.singleInfo {
+    margin-bottom: 20px;
+}
+
+button {
+    color: #9e9e9e !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #9e9e9e !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    color: #ffffff !important;
+    background: rgb(237, 213, 238);
+    transition: all 0.4s ease 0s;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.drop-button:focus {
+    outline: 0;
+}
+
+
+    
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .imgcolumn {
+     flex: 50%;
+     max-width: 50%;
+  }
+}
+    
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .imgcolumn {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* STYLING FROM VIDEO  */
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 10em 0;
+    background-image: url(/images/Banner1.jpg);
+    background-size: 105%;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.spacing > * + * {
+    margin-top: var(--spacer, 2rem)
+}
+
+section {
+    padding: 5em .5em;
+}
+
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.split > * {
+    flex-basis: 30%;
+    min-width: 15em;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, 5VW + 1rem);
+    line-height: 1;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.featured_item {
+    display: block;
+    position: relative;
+    transform: scale(.85);
+    transition: transform 250ms ease-in-out;
+}
+
+.featured_item:hover {
+    transform: scale(1);
+}
+
+.featured_item:focus {
+    transform: scale(1);
+}
+
+.product_description {
+    text-align: center;
+    margin: 20px:
+}
+
+
+
+
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    justify-content: center;
+    transition: all .7s ease-in;
+    border-top: 1px solid rgb(187, 187, 187);
+    min-height: 6vh;
+    box-sizing: border-box;
+    transition: all .7s ease-in;
+    padding: 2em;
+}
+
+.footer > * {
+    flex-basis: 30%;
+    min-width: 15em;
+}
+  
+.footer_item {
+    display: block;
+    position: relative;
+    transform: scale(.85);
+    transition: transform 250ms ease-in-out;
+}
+
+.footerdiv {
+    text-align: center;
+}
+
+.subButton, .subInput {
+    color: #9e9e9e !important;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #9e9e9e !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Scent Dropbox styling  */
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
