@@ -1,9 +1,18 @@
 import request from 'superagent'
 
-const candleUrl = 'http://localhost:3000/api/v1/candles/'
+const apiURL = 'http://localhost:3000/api/v1/'
 
 export function getCandles () {
   return request
-    .get(candleUrl)
+    .get(`${apiURL}candles`)
     .then(response =>  response.body)
 }
+
+
+export function getDiffusers () {
+  return request
+    .get(`${apiURL}diffusers`)
+    .then(response =>  response.body)
+}
+
+
