@@ -2,10 +2,12 @@ import React from 'react'
 import { render, screen } from "@testing-library/react"
 import { Provider } from "react-redux";
 
+import FETCH_CANDLES from '../actions'
 import store from '../store'
 import App from './App'
 
 jest.spyOn(store, 'getState')
+jest.spyOn(store, 'dispatch')
 
 beforeEach(() => {
     store.getState.mockImplementation(() => ({
@@ -24,3 +26,5 @@ test('displays candles names', () => {
     expect(candles.length).toBe(3)
     expect(candles[2].innerHTML).toMatch(/Vintage/)
 })
+
+

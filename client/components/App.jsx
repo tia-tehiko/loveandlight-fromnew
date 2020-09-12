@@ -1,9 +1,23 @@
 import React from 'react'
 import Candles from './Candles'
-import { connect } from "react-redux";
+import { connect } from 'react-redux'
+import { getCandles } from "../api";
+import { fetchCandles } from "../actions";
+
 
 
 export class App extends React.Component {
+
+  componentDidMount() {
+    getCandles()
+    .then(candles => {
+      this.props.dispatch(fetchCandles(candles))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  
   render() {
     return (
       <div>
