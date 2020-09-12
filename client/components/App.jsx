@@ -1,6 +1,8 @@
 import React from 'react'
-import Candles from './Candles'
 import { connect } from 'react-redux'
+
+import Candles from './Candles'
+import Diffusers from './Diffusers'
 
 export class App extends React.Component {
   
@@ -9,6 +11,7 @@ export class App extends React.Component {
       <div>
         <h1>App Page</h1>
         <Candles />
+        <Diffusers />
       </div>
     )
   }
