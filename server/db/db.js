@@ -6,6 +6,11 @@ function getCandles (db = connection) {
     return db('candles').select()
 }
 
+function getDiffusers (db = connection) {
+    return db('diffusers').select()
+}
+
 module.exports = {
-    getCandles
+    getCandles,
+    getDiffusers
 }
