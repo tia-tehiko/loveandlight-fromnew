@@ -10,7 +10,7 @@ class Candles extends React.Component {
           this.props.dispatch(fetchCandles(candles))
         })
         .catch(err => {
-          console.log(err)
+            this.renderError(err)
         })
       }
 
