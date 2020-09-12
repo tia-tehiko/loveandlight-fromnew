@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getDiffusers } from '../api'
-import { fetchDiffusers } from "../actions";
+import { fetchDiffusers } from '../actions'
+
+import DiffuserItems from './DiffuserItems'
 
 class Diffusers extends React.Component {
     componentDidMount() {
@@ -17,11 +19,11 @@ class Diffusers extends React.Component {
     render() {
         return (
             <div>
-                <h1>Diffusers</h1>
-                <ul>
+                <h1 className='pageHeader'>Diffusers</h1>
+                <div className='productContainer'>
                     {this.props.diffusers.map(diffuser => 
-                        <li key={diffuser.id}>{diffuser.name}</li>)}
-                </ul>
+                       <DiffuserItems key={diffuser.id} diffuser={diffuser} />)}
+                </div>
             </div>
         )
     }
