@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getCandles } from "../api";
-import { fetchCandles } from "../actions";
+import { getCandles } from '../api'
+import { fetchCandles } from '../actions'
+
+import CandleItems from './CandleItems'
 
 class Candles extends React.Component {
     componentDidMount() {
@@ -17,10 +19,11 @@ class Candles extends React.Component {
     render() {
         return (
             <div>
-                <h1>Vegan Soy Candles</h1>
-                <ul>{this.props.candles.map(candle => 
-                    <li key={candle.id}>{candle.name}</li>)}
-                </ul>     
+                <h1 className="pageHeader">Vegan Soy Candles</h1>
+                <div className='productContainer'>
+                {this.props.candles.map(candle => 
+                  <CandleItems key={candle.id} candle={candle} />)}
+              </div>
             </div>
         )
     }
@@ -33,3 +36,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Candles)
+
+
