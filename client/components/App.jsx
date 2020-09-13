@@ -9,6 +9,7 @@ import Candles from './Candles'
 import CandleDetails from './CandleDetails'
 import Diffusers from './Diffusers'
 import DiffuserDetails from './DiffuserDetails'
+import Scents from './Scents'
 import Shipping from './Shipping'
 
 export class App extends React.Component {
@@ -21,6 +22,7 @@ export class App extends React.Component {
         <Route exact path='/candles/:name' component={CandleDetails} />
         <Route exact path='/diffusers' component={Diffusers} />
         <Route exact path='/diffusers/:name' component={DiffuserDetails} />
+        <Route exact path='/scents' component={Scents} />
         <Route exact path='/shipping' component={Shipping} />
         <Route path='/' component={Footer} />
       </div>
