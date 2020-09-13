@@ -48,12 +48,12 @@ export default class LandingPage extends React.Component {
                   time for friends and family which soon turned into something I
                   love and enjoy doing everyday. <br />
                   We are proud that all of our products are Vegan and our
-                  candles are made using only natural soy wax along with using
-                  fragrances which many of them containing a high percentage of
-                  essential oils. <br />
-                  All of our diffusers and candles are handpoured by myself and
-                  I take great pride and attention to detail when producing
-                  these for you. <br />
+                  candles are made using only natural Soy wax along with high
+                  quality fragrances with many of them containing a high
+                  percentage of essential oils. <br />
+                  All of our diffusers and candles are hand poured by myself and
+                  I use great care and attention to detail when producing these
+                  for you. <br />
                   We hope you enjoy your beautiful home fragrances as much as I
                   enjoy making them. <br />
                   Sending Love & Light to you all.
