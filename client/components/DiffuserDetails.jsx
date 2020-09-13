@@ -6,7 +6,6 @@ import ScentDropbox from './ScentDropbox'
 
 class DiffuserDetails extends React.Component {
   render() {
-    console.log(this.props)
     const { name, img, price, details } = this.props.diffusers
     return (
       <div className='singleContainer'>

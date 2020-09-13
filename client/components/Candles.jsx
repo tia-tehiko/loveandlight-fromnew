@@ -9,11 +9,9 @@ class Candles extends React.Component {
   componentDidMount() {
     getCandles()
       .then((candles) => {
-        this.props.dispatch(fetchCandles(candles))
+        return this.props.dispatch(fetchCandles(candles))
       })
-      .catch((err) => {
-        res.status(500).send('Its the Error Message for me!')
-      })
+      .catch((err) => {})
   }
 
   render() {
