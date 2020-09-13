@@ -1,11 +1,14 @@
-import { FETCH_DIFFUSERS } from "../actions"
+import { FETCH_DIFFUSERS, DISPLAY_DIFFUSER_DETAILS } from "../actions"
 
-export default function diffusersReducer (state = [], action) {
-    switch(action.type) {
+export default function diffusersReducer(state = [], action) {
+    switch (action.type) {
         case FETCH_DIFFUSERS:
-        return action.diffusers
+            return action.diffusers
 
-        default: 
-        return state
+        case DISPLAY_DIFFUSER_DETAILS:
+            return state.filter(item => item.id !== action.id)
+
+        default:
+            return state
     }
 } 
