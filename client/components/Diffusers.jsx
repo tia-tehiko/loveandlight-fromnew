@@ -11,8 +11,8 @@ class Diffusers extends React.Component {
       .then((diffusers) => {
         this.props.dispatch(fetchDiffusers(diffusers))
       })
-      .catch((err) => {
-        this.renderError(err)
+      .catch(err => {
+        res.status(500).send('Somethings gone wrong')
       })
   }
 
