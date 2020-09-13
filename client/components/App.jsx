@@ -8,18 +8,16 @@ import Candles from './Candles'
 import Diffusers from './Diffusers'
 
 export class App extends React.Component {
-  
   render() {
     return (
-        <div className='container'>
-        <Route path='/' component={ Nav } />
-        <Route exact path='/' component={ LandingPage } />
-        <Route exact path='/candles' component={ Candles } />
-        <Route exact path='/diffusers' component={ Diffusers } />
+      <div className='container'>
+        <Route path='/' component={Nav} />
+        <Route exact path='/' component={LandingPage} />
+        <Route exact path='/candles' component={Candles} />
+        <Route exact path='/diffusers' component={Diffusers} />
       </div>
     )
   }
 }
-
 
 export default App

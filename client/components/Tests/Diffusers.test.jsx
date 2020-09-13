@@ -2,8 +2,8 @@ import React from 'react'
 import { render,screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 
-import Diffusers from './Diffusers'
-import store from '../store'
+import Diffusers from '../Diffusers'
+import store from '../../store'
 
 jest.spyOn(store, 'getState')
 jest.spyOn(store, 'dispatch')
