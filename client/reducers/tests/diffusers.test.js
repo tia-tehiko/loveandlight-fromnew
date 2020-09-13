@@ -1,5 +1,5 @@
-import diffusersReducer from './diffusers'
-import { fetchDiffusers } from '../actions'
+import diffusersReducer from '../diffusers'
+import { fetchDiffusers } from '../../actions'
 
 test('test that initial state is an empty array', () => {
     let state = diffusersReducer(undefined, {})

@@ -1,5 +1,5 @@
-import candlesReducer from './candles'
-import { fetchCandles } from "../actions";
+import candlesReducer from '../candles'
+import { fetchCandles } from "../../actions";
 
 test('initial state is an empty array', () => {
     let state = candlesReducer(undefined, {})
