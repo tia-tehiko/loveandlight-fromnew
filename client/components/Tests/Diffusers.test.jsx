@@ -22,10 +22,8 @@ beforeEach(() => {
 
 test('displays diffuser list item names', () => {
   render(<Provider store={store}><MemoryRouter><Diffusers /></MemoryRouter></Provider>)
-  expect.assertions(2)
-  let diffusers = screen.getAllByRole('listitem')
+  expect.assertions(1)
+  let diffusers = screen.getAllByRole('img')
   expect(diffusers.length).toBe(3)
-  expect(diffusers[0].innerHTML).toMatch(/Reed/)
 })
-
 

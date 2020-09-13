@@ -21,10 +21,9 @@ beforeEach(() => {
 
 test('displays candles names', () => {
     render(<Provider store={store}><MemoryRouter><Candles /></MemoryRouter></Provider>)
-    expect.assertions(2)
-    let candles = screen.getAllByRole('listitem')
+    expect.assertions(1)
+    let candles = screen.getAllByRole('img')
     expect(candles.length).toBe(3)
-    expect(candles[2].innerHTML).toMatch(/Vintage/)
 })
 
 
