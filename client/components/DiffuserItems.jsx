@@ -8,9 +8,11 @@ export class DiffuserItems extends React.Component {
     return (
       <div className='product'>
         <Link key={id} to={`candles/${name}`}>
-          <img src={img} className='productImage'></img>
-          <h4 className='productHeader'> {name}</h4>
-          <h5 className='productPrice'> ${price}</h5>
+          <li>
+            <img src={img} className='productImage'></img>
+            <h4 className='productHeader'> {name}</h4>
+            <h5 className='productPrice'> ${price}</h5>
+          </li>
         </Link>
       </div>
     )
