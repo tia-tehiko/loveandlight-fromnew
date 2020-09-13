@@ -15,4 +15,10 @@ export function getDiffusers () {
     .then(response =>  response.body)
 }
 
+export function getScents () {
+  return request 
+  .get(`${apiURL}scents`)
+  .then(response => response.body)
+}
+
 
