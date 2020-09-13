@@ -3,11 +3,13 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Nav from './Nav'
+import Footer from './Footer'
 import LandingPage from './LandingPage'
 import Candles from './Candles'
 import CandleDetails from './CandleDetails'
 import Diffusers from './Diffusers'
 import DiffuserDetails from './DiffuserDetails'
+import Shipping from './Shipping'
 
 export class App extends React.Component {
   render() {
@@ -19,6 +21,8 @@ export class App extends React.Component {
         <Route exact path='/candles/:name' component={CandleDetails} />
         <Route exact path='/diffusers' component={Diffusers} />
         <Route exact path='/diffusers/:name' component={DiffuserDetails} />
+        <Route exact path='/shipping' component={Shipping} />
+        <Route path='/' component={Footer} />
       </div>
     )
   }
