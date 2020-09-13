@@ -11,8 +11,8 @@ class Candles extends React.Component {
       .then((candles) => {
         this.props.dispatch(fetchCandles(candles))
       })
-      .catch(err => {
-        res.status(500).send('Somethings gone wrong')
+      .catch((err) => {
+        res.status(500).send('Its the Error Message for me!')
       })
   }
 
@@ -32,7 +32,7 @@ class Candles extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    candles: state.candles
+    candles: state.candles,
   }
 }
 
