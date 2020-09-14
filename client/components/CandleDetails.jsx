@@ -8,7 +8,15 @@ import formatCurrency from '../util'
 
 class CandleDetails extends React.Component {
   handleClick = (id) => {
-    this.props.addToCart(this.props.id)
+    this.props.addToCart(this.props.id, this.state.scentId)
+  }
+
+  chooseScent = (scentId) => {
+    this.setState({ scentId: scentId })
+  }
+
+  state = {
+    scentId: false
   }
 
   render() {
@@ -22,7 +30,7 @@ class CandleDetails extends React.Component {
           <h2 className='singleHeader'> {name}</h2>
           <h5 className='singlePrice'>{formatCurrency(price)}</h5>
           <p className='singleInfo'> {details} </p>
-          <ScentDropbox />
+          <ScentDropbox scent={this.chooseScent} />
           <button className='productButton' onClick={() => this.handleClick(id)}>Add to Cart</button>
           <br />
           <Link to='/candles'>
@@ -36,13 +44,13 @@ class CandleDetails extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    candles: state.candles[0]
+    candles: state.candles[0],
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => { dispatch(addToCart(id)) }
+    addToCart: (id, scentId) => { dispatch(addToCart(id, scentId)) }
   }
 }
 
