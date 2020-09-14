@@ -13,12 +13,7 @@ class Cart extends React.Component {
         }
     }
 
-    // state = {
-    //     cartItems: this.props.cartItems,
-    //     scent: this.props.scent
-    // }
     render() {
-        console.log(this.state.cartItems)
         return (
             <div>
                 <h1>This is the Cart</h1>
