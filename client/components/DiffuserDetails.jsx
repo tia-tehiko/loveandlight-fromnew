@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import ScentDropbox from './ScentDropbox'
+import formatCurrency from '../util'
 
 class DiffuserDetails extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class DiffuserDetails extends React.Component {
         </div>
         <div className='infoContainer'>
           <h2 className='singleHeader'> {name}</h2>
-          <h5 className='singlePrice'> ${price}</h5>
+          <h5 className='singlePrice'> {formatCurrency(price)}</h5>
           <p className='singleInfo'> {details} </p>
           <ScentDropbox />
           <button className='productButton'>Add to Cart</button>
