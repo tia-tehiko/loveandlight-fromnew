@@ -11,6 +11,7 @@ import Diffusers from './Diffusers'
 import DiffuserDetails from './DiffuserDetails'
 import Scents from './Scents'
 import Shipping from './Shipping'
+import Cart from './Cart'
 
 export class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ export class App extends React.Component {
         <Route exact path='/diffusers/:name' component={DiffuserDetails} />
         <Route exact path='/scents' component={Scents} />
         <Route exact path='/shipping' component={Shipping} />
+        <Route exact path='/cart' component={Cart} />
         <Route path='/' component={Footer} />
       </div>
     )
