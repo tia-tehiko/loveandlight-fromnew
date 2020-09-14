@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import formatCurrency from '../util'
+
 class Cart extends React.Component {
     state = {
         cartItems: {
@@ -22,7 +24,7 @@ class Cart extends React.Component {
                 <h1>This is the Cart</h1>
                 <div className="cartItem">
                     <h4>{this.state.cartItems.name}</h4>
-                    <h4>${this.state.cartItems.price}.00</h4>
+                    <h4>{formatCurrency(this.state.cartItems.price)}</h4>
                 </div>
             </div>
         )
