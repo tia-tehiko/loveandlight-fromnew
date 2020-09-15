@@ -14,10 +14,11 @@ class Cart extends React.Component {
                     <thead>
                         <tr>
                             <th>Product</th>
+                            <th>Name</th>
                             <th>Scent</th>
-                            <th>Price</th>
                             <th>Quantity</th>
                             <th>Remove</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,8 +27,7 @@ class Cart extends React.Component {
                 </table>
 
                 <p className="actions">
-                    <Link to='/'>Continue shopping</Link>
-                    <button>Update</button>
+                    <Link to='/candles'><button>Continue shopping</button></Link>
                     <button className="button-primary">Checkout</button>
                 </p>
 

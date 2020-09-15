@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { connect } from 'react-redux'
 
@@ -7,15 +6,16 @@ import formatCurrency from '../util'
 
 class CartListItem extends React.Component {
     render() {
-        const { id, name, price, img, quantity } = this.props.item
+        const { id, name, price, img, quantity, scent } = this.props.item
         return (
             <>
                 <tr>
+                    <td>Img Placeholder</td>
                     <td>{name}</td>
-                    <td>Scent Placeholder</td>
-                    <td>{formatCurrency(price)}</td>
+                    <td>{scent}</td>
                     <td>{quantity}</td>
                     <td><a>X</a></td>
+                    <td>{formatCurrency(price)}</td>
                 </tr>
             </>
         )
