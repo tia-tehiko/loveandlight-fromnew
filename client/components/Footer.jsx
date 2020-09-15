@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom'
 
 import Subscribe from './Subscribe'
 import Contact from './Contact'
-import Shipping from './Shipping'
 
 class Footer extends React.Component {
   render() {
     return (
       <div className='footer'>
-        <Link to='/shipping'>
-          <h4 className='navtitle'>Shipping + Returns</h4>
-        </Link>
-        <Subscribe />
+        <div>
+          <h3>MENU</h3>
+          <Link to='/shipping'><h4 className='navtitle'>Shipping + Returns</h4></Link>
+          <Link to='/candlecare'><h4 className='navtitle'>Candle Care</h4></Link>
+        </div>
         <Contact />
+        <Subscribe />
       </div>
     )
   }
