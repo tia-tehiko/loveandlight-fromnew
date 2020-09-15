@@ -11,7 +11,7 @@ class CandleDetails extends React.Component {
     this.props.addToCart(this.props.id, this.state.scentId)
   }
 
-  chooseScent = (scentId) => {
+  chosenScent = (scentId) => {
     this.setState({ scentId: scentId })
   }
 
@@ -33,7 +33,7 @@ class CandleDetails extends React.Component {
           <h4>{wick}</h4><br />
           <p className='singleInfo'> {details} </p>
           <p>{gift_boxed}</p>
-          <ScentDropbox scent={this.chooseScent} />
+          <ScentDropbox chosenScent={this.chosenScent} />
           <button className='productButton' disabled={this.state.scentId === false} onClick={() => this.handleClick(id)}>Add to Cart</button>
           <br />
           <Link to='/candles'>

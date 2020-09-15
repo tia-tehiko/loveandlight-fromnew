@@ -12,7 +12,7 @@ class ScentDropbox extends React.Component {
   }
 
   handleChange = (event) => {
-    this.props.scent(Number(event.target.value))
+    this.props.chosenScent(Number(event.target.value))
   }
 
   render() {

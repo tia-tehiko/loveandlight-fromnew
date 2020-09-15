@@ -15,7 +15,7 @@ class DiffuserDetails extends React.Component {
         </div>
         <div className='infoContainer'>
           <h2 className='singleHeader'> {name}</h2>
-          <h5 className='singlePrice'> {formatCurrency(price)}</h5>
+          <h4 className='singlePrice'> {formatCurrency(price)}</h4>
           <p className='singleInfo'> {details} </p>
           <ScentDropbox />
           <button className='productButton'>Add to Cart</button>
