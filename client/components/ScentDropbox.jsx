@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getScents } from '../api'
-import { fetchScents, selectScent } from '../actions'
+import { fetchScents } from '../actions'
 
 class ScentDropbox extends React.Component {
   componentDidMount() {

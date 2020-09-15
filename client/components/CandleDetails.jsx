@@ -7,16 +7,16 @@ import ScentDropbox from './ScentDropbox'
 import formatCurrency from '../util'
 
 class CandleDetails extends React.Component {
-  handleClick = (id) => {
-    this.props.addToCart(this.props.id, this.state.scentId)
+  state = {
+    scentId: false
   }
 
   chosenScent = (scentId) => {
     this.setState({ scentId: scentId })
   }
 
-  state = {
-    scentId: false
+  handleClick = (item, scentId) => {
+    this.props.dispatch(addToCart(item, this.state.scentId))
   }
 
   render() {
@@ -34,7 +34,7 @@ class CandleDetails extends React.Component {
           <p className='singleInfo'> {details} </p>
           <p>{gift_boxed}</p>
           <ScentDropbox chosenScent={this.chosenScent} />
-          <button className='productButton' disabled={this.state.scentId === false} onClick={() => this.handleClick(id)}>Add to Cart</button>
+          <button className='productButton' disabled={this.state.scentId === false} onClick={() => this.handleClick(this.props.candles)}>Add to Cart</button>
           <br />
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
@@ -51,10 +51,4 @@ function mapStateToProps(state) {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addToCart: (id, scentId) => { dispatch(addToCart(id, scentId)) }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CandleDetails)
+export default connect(mapStateToProps)(CandleDetails)

@@ -15,8 +15,7 @@ class CandleItems extends React.Component {
         <Link
           key={id}
           to={`candles/${name}`}
-          onClick={() => this.handleClick(id)}
-        >
+          onClick={() => this.handleClick(id)}>
           <img src={img} className='productImage'></img>
           <h4 className='productHeader'> {name}</h4>
           <h5 className='productPrice'> {formatCurrency(price)}</h5>

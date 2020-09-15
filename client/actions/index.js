@@ -32,9 +32,9 @@ export function displayProductDetails(id) {
   }
 }
 
-export function addToCart(id) {
+export function addToCart(item) {
   return {
     type: ADD_TO_CART,
-    id,
+    item
   }
 }
