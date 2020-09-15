@@ -35,7 +35,7 @@ button:focus, select, option {
 
   
 .navcontainer{
-    width: 95%;
+    width: 100%;
     min-height: 6vh;
     box-sizing: border-box;
     display: flex;
@@ -46,7 +46,8 @@ button:focus, select, option {
     top: 0;
     background-color:white;
     z-index: 1;
-    margin: 2rem;
+    margin-bottom: .5rem;
+    margin-top: 2rem;
 }
   
 .navtitle:hover {
@@ -58,50 +59,6 @@ button:focus, select, option {
 
 .navlogo {
     height: 50px;
-}
-
-
-.menu {
-    margin: 30px 30px 0 0;
-    width: 95%;
-    min-height: 6vh;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-}
-
-label {
-    margin: 0 40px 0 0;
-    font-size: 26px;
-    line-height: 70px;
-    display: none;
-}
-
-#toggle {
-    display: none;
-}
-
-
-@media only screen and (max-width: 500px) {
-    label {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menu {
-        text-align: center;
-        width: 100%;
-    }
-
-    .menu a {
-        display: block;
-        border-bottom: 1px solid rgb(187, 187, 187);
-        margin: 0;
-    }
-
-    #toggle: checked + .menu {
-        display: block;
-    }
 }
 
 
@@ -429,7 +386,7 @@ section {
 th,
 td {
   padding: 12px 15px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #E1E1E1; }
 th:first-child,
 td:first-child {
@@ -437,4 +394,24 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }
+
+  .cart table {
+    width: 100%;
+  }
+  
+  .cart .update-input {
+    width: 40px;
+    text-align: center;
+    margin-bottom: 0px; /* skeleton override */
+  }
+  
+  .cart tbody button {
+    border: 0;
+    padding-top: 10px;
+  }
+  
+  .cart .actions {
+    display: flex;
+    justify-content: space-between;
+  }
 
