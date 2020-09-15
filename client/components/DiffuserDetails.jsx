@@ -8,19 +8,19 @@ import formatCurrency from '../util'
 
 class DiffuserDetails extends React.Component {
   state = {
-    scentId: false
+    scent: false
   }
 
-  chosenScent = (scentId) => {
-    this.setState({ scentId: scentId })
+  chosenScent = (scent) => {
+    this.setState({ scent: scent })
   }
 
-  handleClick = (item, scentId) => {
-    this.props.dispatch(addToCart(item, this.state.scentId))
+  handleClick = (item, scent) => {
+    this.props.dispatch(addToCart(item, this.state.scent))
   }
 
   render() {
-    const { name, img, price, details } = this.props.diffusers
+    const { name, img, price, details, size, lifespan } = this.props.diffusers
     return (
       <div className='singleContainer'>
         <div className='imgContainer'>
@@ -29,15 +29,17 @@ class DiffuserDetails extends React.Component {
         <div className='infoContainer'>
           <h2 className='singleHeader'> {name}</h2>
           <h4 className='singlePrice'> {formatCurrency(price)}</h4>
+          <h4>{lifespan}</h4>
+          <h4>{size}</h4><br />
           <p className='singleInfo'> {details} </p>
           <ScentDropbox chosenScent={this.chosenScent} />
-          <button onClick={() => { this.handleClick(this.props.diffusers) }} disable={this.state.scentId === false} className='productButton'>Add to Cart</button>
+          <Link to='/cart'><button onClick={() => { this.handleClick(this.props.diffusers) }} disabled={this.state.scent === false} className='productButton'>Add to Cart</button></Link>
           <br />
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
           </Link>
         </div>
-      </div>
+      </div >
     )
   }
 }

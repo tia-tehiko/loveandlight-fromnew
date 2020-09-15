@@ -8,15 +8,15 @@ import formatCurrency from '../util'
 
 class CandleDetails extends React.Component {
   state = {
-    scentId: false
+    scent: false
   }
 
-  chosenScent = (scentId) => {
-    this.setState({ scentId: scentId })
+  chosenScent = (scent) => {
+    this.setState({ scent: scent })
   }
 
-  handleClick = (item, scentId) => {
-    this.props.dispatch(addToCart(item, this.state.scentId))
+  handleClick = (item, scent) => {
+    this.props.dispatch(addToCart(item, this.state.scent))
   }
 
   render() {
@@ -34,7 +34,7 @@ class CandleDetails extends React.Component {
           <p className='singleInfo'> {details} </p>
           <p>{gift_boxed}</p>
           <ScentDropbox chosenScent={this.chosenScent} />
-          <button onClick={() => this.handleClick(this.props.candles)} disabled={this.state.scentId === false} className='productButton'>Add to Cart</button>
+          <Link to='/cart'><button onClick={() => this.handleClick(this.props.candles, this.state.scent)} disabled={this.state.scent === false} className='productButton'>Add to Cart</button></Link>
           <br />
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
