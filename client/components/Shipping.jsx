@@ -34,7 +34,7 @@ export class Shipping extends React.Component {
           your order may take 4-10 business days to get to you. If you have not
           received your order by 10 working days from dispatch please contact us
           at loveandlighthomefragrances@gmail.com (Please note: Times may vary
-          depending on public holidays, Christmas holiday periods
+          depending on public holidays, Christmas holiday periods)
         </p>
         <p>Please note we do not deliver to parcel lockers or PO boxes</p>
 
@@ -57,5 +57,4 @@ export class Shipping extends React.Component {
     )
   }
 }
-
 export default Shipping
