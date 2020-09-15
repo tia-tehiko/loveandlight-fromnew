@@ -34,7 +34,7 @@ class CandleDetails extends React.Component {
           <p className='singleInfo'> {details} </p>
           <p>{gift_boxed}</p>
           <ScentDropbox scent={this.chooseScent} />
-          <button className='productButton' onClick={() => this.handleClick(id)}>Add to Cart</button>
+          <button className='productButton' disabled={this.state.scentId === false} onClick={() => this.handleClick(id)}>Add to Cart</button>
           <br />
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
