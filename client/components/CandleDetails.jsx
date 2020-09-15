@@ -20,7 +20,7 @@ class CandleDetails extends React.Component {
   }
 
   render() {
-    const { id, name, img, price, details } = this.props.candles
+    const { id, name, img, price, details, size, wick, gift_boxed } = this.props.candles
     return (
       <div className='singleContainer'>
         <div className='imgContainer'>
@@ -28,8 +28,11 @@ class CandleDetails extends React.Component {
         </div>
         <div className='infoContainer'>
           <h2 className='singleHeader'> {name}</h2>
-          <h5 className='singlePrice'>{formatCurrency(price)}</h5>
+          <h4 className='singlePrice'>{formatCurrency(price)}</h4>
+          <h4>{size}</h4>
+          <h4>{wick}</h4><br />
           <p className='singleInfo'> {details} </p>
+          <p>{gift_boxed}</p>
           <ScentDropbox scent={this.chooseScent} />
           <button className='productButton' onClick={() => this.handleClick(id)}>Add to Cart</button>
           <br />
@@ -37,7 +40,7 @@ class CandleDetails extends React.Component {
             <button className='productButton'>Back to Products</button>
           </Link>
         </div>
-      </div>
+      </div >
     )
   }
 }

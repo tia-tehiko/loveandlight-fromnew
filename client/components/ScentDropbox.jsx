@@ -19,7 +19,7 @@ class ScentDropbox extends React.Component {
     return (
       <div>
         <select value={this.props.value} onChange={this.handleChange}>
-          <option className='selectOption'>Select Scent</option>
+          <option className='selectOption'>SELECT SCENT</option>
           {this.props.scents.map((scent) => (
             <option value={scent.id} key={scent.id}>{scent.name}</option>
           ))}
