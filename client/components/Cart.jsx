@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import CartListItem from './CartListItem'
 
+import CartListItem from './CartListItem'
 import formatCurrency from '../util'
 
 class Cart extends React.Component {
-    //render the cart item hers
     render() {
         return (
             <div className="cart">
@@ -24,11 +23,16 @@ class Cart extends React.Component {
                     <tbody>
                         {this.props.cartItems.map((item) => <CartListItem key={item.id} item={item} />)}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                        </tr>
+                    </tfoot>
                 </table>
 
                 <p className="actions">
                     <Link to='/candles'><button>Continue shopping</button></Link>
-                    <button className="button-primary">Checkout</button>
+                    <button>Checkout</button>
                 </p>
 
             </div>
