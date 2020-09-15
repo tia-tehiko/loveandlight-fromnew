@@ -3,6 +3,7 @@ export const FETCH_DIFFUSERS = 'FETCH_DIFFUSERS'
 export const FETCH_SCENTS = 'FETCH_SCENTS'
 export const DISPLAY_PRODUCT_DETAILS = 'DISPLAY_PRODUCT_DETAILS'
 export const ADD_TO_CART = 'ADD_TO_CART'
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 
 export function fetchCandles(candles) {
   return {
@@ -32,9 +33,17 @@ export function displayProductDetails(id) {
   }
 }
 
-export function addToCart(item) {
+export function addToCart(item, scent) {
   return {
     type: ADD_TO_CART,
-    item
+    item,
+    scent,
+  }
+}
+
+export function removeFromCart(id) {
+  return {
+    type: REMOVE_FROM_CART,
+    id
   }
 }
