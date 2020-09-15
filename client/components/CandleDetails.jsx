@@ -20,7 +20,7 @@ class CandleDetails extends React.Component {
   }
 
   render() {
-    const { id, name, img, price, details, size, wick, gift_boxed } = this.props.candles
+    const { name, img, price, details, size, wick, gift_boxed } = this.props.candles
     return (
       <div className='singleContainer'>
         <div className='imgContainer'>
@@ -34,7 +34,7 @@ class CandleDetails extends React.Component {
           <p className='singleInfo'> {details} </p>
           <p>{gift_boxed}</p>
           <ScentDropbox chosenScent={this.chosenScent} />
-          <button className='productButton' disabled={this.state.scentId === false} onClick={() => this.handleClick(this.props.candles)}>Add to Cart</button>
+          <button onClick={() => this.handleClick(this.props.candles)} disabled={this.state.scentId === false} className='productButton'>Add to Cart</button>
           <br />
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
