@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { removeFromCart } from '../actions'
 
 import formatCurrency from '../util'
 
@@ -10,11 +11,11 @@ class CartListItem extends React.Component {
         return (
             <>
                 <tr>
-                    <td>Img Placeholder</td>
+                    <td><img src={img} className='cartImage' /></td>
                     <td>{name}</td>
                     <td>{scent}</td>
                     <td>{quantity}</td>
-                    <td><a>X</a></td>
+                    <td><a onClick={() => this.props.dispatch(removeFromCart(this.props.item.id))}>X</a></td>
                     <td>{formatCurrency(price)}</td>
                 </tr>
             </>

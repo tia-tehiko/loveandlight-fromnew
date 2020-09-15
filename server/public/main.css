@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 button:focus, select, option {
@@ -415,3 +416,7 @@ td:last-child {
     justify-content: space-between;
   }
 
+.cartImage {
+    height: 50px;
+    width: 50px;
+}
