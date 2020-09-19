@@ -21,4 +21,5 @@ router.get('/scents', (req, res) => {
   })
 })
 
+
 module.exports = router
