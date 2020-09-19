@@ -1,24 +1,23 @@
 import request from 'superagent'
 
-const apiURL = 'http://localhost:3000/api/v1/'
-
-export function getCandles () {
+export function getCandles() {
   return request
-    .get(`${apiURL}candles`)
-    .then(response =>  response.body)
+    .get('http://localhost:3000/api/v1/candles')
+    .then(response => response.body)
 }
 
 
-export function getDiffusers () {
+export function getDiffusers() {
   return request
-    .get(`${apiURL}diffusers`)
-    .then(response =>  response.body)
+    .get('http://localhost:3000/api/v1/diffusers')
+    .then(response => response.body)
 }
 
-export function getScents () {
-  return request 
-  .get(`${apiURL}scents`)
-  .then(response => response.body)
+export function getScents() {
+  return request
+    .get('http://localhost:3000/api/v1/scents')
+    .then(response => response.body)
 }
+
 
 
