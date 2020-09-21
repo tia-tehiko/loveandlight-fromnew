@@ -9,9 +9,6 @@ exports.up = function (knex) {
     table.string('img')
     table.string('details')
     table.string('gift_boxed')
-    table.boolean('inCart')
-    table.integer('count')
-    table.integer('total')
   })
 };
 

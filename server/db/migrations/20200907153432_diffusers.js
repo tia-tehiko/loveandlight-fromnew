@@ -7,9 +7,6 @@ exports.up = function (knex) {
     table.string('lifespan')
     table.string('img')
     table.string('details')
-    table.boolean('inCart')
-    table.integer('count')
-    table.integer('total')
   })
 }
 
