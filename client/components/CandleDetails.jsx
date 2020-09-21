@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToCart } from '../actions'
+import { postToCart } from "../api"
 
 import ScentDropbox from './ScentDropbox'
 import formatCurrency from '../util'
