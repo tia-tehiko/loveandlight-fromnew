@@ -1,3 +1,5 @@
+const guid = require('../../utils/guid.util')
+
 exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex('candles')
@@ -6,7 +8,7 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('candles').insert([
         {
-          id: 1,
+          id: guid({ prefix: 'CDL' }),
           name: 'Carousel Mini',
           size: '65g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -17,7 +19,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar does not come Gift Boxed',
         },
         {
-          id: 2,
+          id: guid({ prefix: 'CDL' }),
           name: 'Carousel Large',
           size: '175g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -28,7 +30,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 3,
+          id: guid({ prefix: 'CDL' }),
           name: 'Teardrop',
           size: '230g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -39,7 +41,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 4,
+          id: guid({ prefix: 'CDL' }),
           name: 'Vintage Clear',
           size: '300g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -50,7 +52,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 5,
+          id: guid({ prefix: 'CDL' }),
           name: 'Vintage Tiffany Blue',
           size: '300g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -61,7 +63,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 6,
+          id: guid({ prefix: 'CDL' }),
           name: 'Geo Large',
           size: '500g Natural Soy Wax',
           wick: 'Double Cotton Wick',
@@ -72,7 +74,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 7,
+          id: guid({ prefix: 'CDL' }),
           name: 'Renee Mauve Marble',
           size: '500g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -83,7 +85,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 8,
+          id: guid({ prefix: 'CDL' }),
           name: 'Renee Pink Marble',
           size: '500g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -94,7 +96,7 @@ exports.seed = function (knex) {
           gift_boxed: 'This Jar comes Gift Boxed',
         },
         {
-          id: 9,
+          id: guid({ prefix: 'CDL' }),
           name: 'Omg',
           size: '620g Natural Soy Wax',
           wick: 'Triple Cotton Wick',
