@@ -5,7 +5,8 @@ import server from '../server'
 
 jest.mock('../db/db', () => ({
   getCandles: jest.fn(),
-  getDiffusers: jest.fn()
+  getDiffusers: jest.fn(),
+  getScents: jest.fn()
 }))
 
 describe('GET/  api/v1/candles', () => {
@@ -84,4 +85,32 @@ describe('GET/ api/v1/diffusers', () => {
 
   })
 })
+
+describe('GET/ api/v1/scents', () => {
+  test('check if status 200', () => {
+    getScents.mockImplementation(() => Promise.resolve())
+    return request(server)
+      .get('/api/v1/scents')
+      .then((res) => {
+        expect.assertions(1)
+        expect(res.status).toBe(200)
+      })
+  })
+  test('check if scents are returned correctly', () => {
+    getScents.mockImplementation(() => Promise.resolve([
+      { id: 1, name: 'Coconut Lime' },
+      { id: 2, name: 'French Vanilla' },
+      { id: 3, name: 'Japanese Honeysuckle' }
+    ]))
+    return request(server)
+      .get('/api/v1/scents')
+      .then((res) => {
+        expect.assertions(3)
+        expect(res.body[0].name).toBe('Coconut Lime')
+        expect(res.body[1].name).toBe('French Vanilla')
+        expect(res.body[2].name).toBe('Japanese Honeysuckle')
+      })
+  })
+})
+
 
