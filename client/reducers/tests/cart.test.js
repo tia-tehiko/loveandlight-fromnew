@@ -10,7 +10,7 @@ describe('cart reducer tests', () => {
     expect(state.length).toBe(0)
   })
 
-  test('ADD_TO_CART', () => {
+  test('ADD_TO_CART adds item to cart', () => {
     expect.assertions(1)
     const item = { name: 'Carousel Mini', price: 25 }
     const scent = 'Coconut Lime'
@@ -23,7 +23,7 @@ describe('cart reducer tests', () => {
     expect(actualState).toEqual(expectedState)
   })
 
-  test('REMOVE_FROM_CART', () => {
+  test('REMOVE_FROM_CART removes item from cart', () => {
     expect.assertions(1)
     const item = [{ id: 1, name: 'Teardrop', price: 45, scent: 'Japanese Honeysuckle' }]
 
