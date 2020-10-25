@@ -8,11 +8,14 @@ const server = express()
 require('dotenv').config()
 
 const routes = require('./routes/routes')
+const auth = require('./routes/auth.routes')
 
 server.use(express.json())
+server.use(express.urlencoded({ extended: true }))
 server.use(express.static(path.join(__dirname, './public')))
 
 const connection = require('./db/connection')
+const passport = require('passport')
 const sessionStore = new KnexStore({
   knex: connection,
   tablename: 'sessions'
@@ -28,6 +31,12 @@ server.use(session({
   }
 }))
 
+require('./config/passport')
+
+server.use(passport.initialize())
+server.use(passport.session())
+
+server.use('/api/v1/auth', auth)
 server.use('/api/v1', routes)
 
 module.exports = server
