@@ -2,7 +2,7 @@ const database = require('./connection')
 
 function findOne(dataObject, db = database) {
   if (typeof dataObject !== 'object') return
-  const [field, value] = Object.entries(dataObject)
+  const [field, value] = Object.entries(dataObject)[0]
   return db('users').where(field, value).first()
 }
 
