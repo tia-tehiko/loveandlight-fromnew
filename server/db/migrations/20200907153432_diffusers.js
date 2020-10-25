@@ -1,6 +1,6 @@
 exports.up = function (knex) {
   return knex.schema.createTable('diffusers', (table) => {
-    table.increments('id').primary()
+    table.string('id').primary()
     table.string('name')
     table.string('size')
     table.integer('price')

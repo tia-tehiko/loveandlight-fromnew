@@ -1,3 +1,5 @@
+const guid = require('../../utils/guid.util')
+
 exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex('diffusers')
@@ -6,7 +8,7 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('diffusers').insert([
         {
-          id: 1,
+          id: guid({ prefix: 'DFS' }),
           name: 'Reed Diffuser',
           size: '150ml - Comes with 10x Fibre Reed Sticks',
           price: 25,
@@ -16,7 +18,7 @@ exports.seed = function (knex) {
             'Our glass reed diffuser is perfect for fragrancing any room. They are very popular due to its low maintenance and flame/smoke free. Weather it be your bathroom, living area or near your front door for a lovely welcome.',
         },
         {
-          id: 2,
+          id: guid({ prefix: 'DFS' }),
           name: 'Round Car Diffuser',
           size: '10ml',
           price: 10,
@@ -26,7 +28,7 @@ exports.seed = function (knex) {
             'Why not have your car smell just as amazing with your favourite fragrance',
         },
         {
-          id: 3,
+          id: guid({ prefix: 'DFS' }),
           name: 'Circle Car Diffuser',
           size: '10ml',
           price: 10,
