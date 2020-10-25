@@ -24,3 +24,26 @@ export function postToCart(data) {
     .send({ item: data })
     .then((response) => response.body)
 }
+
+export function login(loginData) {
+  return request
+    .post('/api/v1/auth/login')
+    .send(loginData)
+    .then(({ body }) => {
+      if (body.msg) throw new Error(body.msg)
+      return body
+    })
+}
+
+export function fetchSession () {
+  return request
+    .get('/api/v1/auth/login/success')
+    .withCredentials()
+    .set('Accept', 'application/json')
+    .set('Content-Type', 'application/json')
+    .set('Access-Control-Allow-Credentials', 'true')
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to authenticated user")
+    })
+}
