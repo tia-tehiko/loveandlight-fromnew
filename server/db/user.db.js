@@ -6,6 +6,13 @@ function findOne(dataObject, db = database) {
   return db('users').where(field, value).first()
 }
 
+function newUser(userObject, db = database) {
+  return db('users')
+    .insert(userObject)
+    .then(() => db('users').where('id', userObject.id).first())
+}
+
 module.exports = {
-  findOne
+  findOne,
+  newUser
 }
