@@ -47,3 +47,13 @@ export function fetchSession () {
       throw new Error("failed to authenticated user")
     })
 }
+
+export function register (newUserDetails) {
+  return request
+    .post('/api/v1/auth/register')
+    .send(newUserDetails)
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to register user")
+    })
+}
