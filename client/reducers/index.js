@@ -6,6 +6,7 @@ import scentsReducer from './scents'
 import cartReducer from './cart'
 import session from './session.reducer'
 import loading from './loading.reducer'
+import navigation from './navigate.reducer'
 
 const reducers = combineReducers({
   candles: candlesReducer,
@@ -13,7 +14,8 @@ const reducers = combineReducers({
   scents: scentsReducer,
   cartItems: cartReducer,
   session: session,
-  loading: loading
+  loading: loading,
+  navigation: navigation
 })
 
 export default reducers
