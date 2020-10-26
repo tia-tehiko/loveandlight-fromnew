@@ -32,7 +32,7 @@ class Cart extends React.Component {
 
                 <p className="actions">
                     <Link to='/candles'><button>Continue shopping</button></Link>
-                    <button>Checkout</button>
+                    <Link to='/checkout'><button>Checkout</button></Link>
                 </p>
 
             </div>
