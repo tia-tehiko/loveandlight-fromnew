@@ -7,6 +7,7 @@ import cartReducer from './cart'
 import session from './session.reducer'
 import loading from './loading.reducer'
 import navigation from './navigate.reducer'
+import details from './billing-shipping'
 
 const reducers = combineReducers({
   candles: candlesReducer,
@@ -15,7 +16,8 @@ const reducers = combineReducers({
   cartItems: cartReducer,
   session: session,
   loading: loading,
-  navigation: navigation
+  navigation: navigation,
+  details: details
 })
 
 export default reducers
