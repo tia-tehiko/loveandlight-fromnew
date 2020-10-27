@@ -67,3 +67,12 @@ export function billingShipping (billingShippingDetails) {
       throw new Error("failed to submit resources")
     })
 }
+
+export function getBillingAndShippingDetails () {
+  return request
+    .get('/api/v1/billing-shipping')
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to get resources")
+    })
+}
