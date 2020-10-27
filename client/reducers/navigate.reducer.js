@@ -4,10 +4,12 @@ import {
 } from '../actions/navigate.action'
 import BillingAndShippingForm from '../components/checkout/BillingAndShipping/Form'
 import Information from '../components/checkout/Information'
+import Payment from '../components/checkout/Payment'
 
 const pages = {
   'Information': <Information />,
-  'Billing and shipping': <BillingAndShippingForm />
+  'Billing and shipping': <BillingAndShippingForm />,
+  'Payment': <Payment />
 }
 
 const initialState = sessionStorage['label'] ? {
