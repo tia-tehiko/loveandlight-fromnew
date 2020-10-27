@@ -57,3 +57,13 @@ export function register (newUserDetails) {
       throw new Error("failed to register user")
     })
 }
+
+export function billingShipping (billingShippingDetails) {
+  return request
+    .post('/api/v1/billing-shipping')
+    .send(billingShippingDetails)
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to submit resources")
+    })
+}
