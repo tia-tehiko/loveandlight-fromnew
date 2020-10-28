@@ -18,10 +18,10 @@ export function getScents() {
     .then((response) => response.body)
 }
 
-export function postToCart(data) {
+export function postToCart(item) {
   return request
     .post('/api/v1/cart')
-    .send({ item: data })
+    .send({ item })
     .then((response) => response.body)
 }
 
