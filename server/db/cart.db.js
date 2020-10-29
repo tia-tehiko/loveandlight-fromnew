@@ -3,7 +3,7 @@ const database = require('./connection')
 function newCartItem(cartObject, db = database) {
   return db('cart')
     .insert(cartObject)
-    .then(() => db('cart').where('id', cartObject.id).first())
+    .then(() => db('cart').where('id', cartObject.id).where('session_id', cartObject.session_id).first())
 }
 
 function findAllCartItems(sessionId, db = database) {
@@ -17,8 +17,13 @@ function removeCartItem(cartObject, db = database) {
     .del()
 }
 
+function findOne(dataObject, db = database) {
+  return db('cart').where('id', dataObject.id).where('session_id', dataObject.session_id).first()
+}
+
 module.exports = {
   newCartItem,
   findAllCartItems,
-  removeCartItem
+  removeCartItem,
+  findOne
 }
