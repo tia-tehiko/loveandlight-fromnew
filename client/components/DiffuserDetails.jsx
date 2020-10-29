@@ -5,6 +5,7 @@ import { addToCart } from '../actions/cart.action'
 
 import ScentDropbox from './ScentDropbox'
 import formatCurrency from '../util'
+import { postToCart } from '../api'
 
 class DiffuserDetails extends React.Component {
   state = {
@@ -15,8 +16,13 @@ class DiffuserDetails extends React.Component {
     this.setState({ scent: scent })
   }
 
-  handleClick = (item, scent) => {
-    this.props.dispatch(addToCart(item, this.state.scent))
+  handleClick = (item) => {
+    const { scent } = this.state
+    const { dispatch } = this.props
+
+    postToCart({...item, scent, quantity: 1})
+      .then((cartItem) => dispatch(addToCart(cartItem)))
+      .catch(console.log)
   }
 
   render() {
