@@ -9,13 +9,13 @@ import formatCurrency from '../util'
 class CartListItem extends React.Component {
     handleClick = () => {
         const { dispatch, item } = this.props
-        deleteCartItem(item.id)
+        deleteCartItem(item)
             .then(() => dispatch(removeFromCart(item.id)))
             .catch((err) => console.log(err))
     }
     
     render() {
-        const { id, name, price, img, quantity, scent } = this.props.item
+        const { name, price, img, quantity, scent } = this.props.item
         return (
             <>
                 <tr>
