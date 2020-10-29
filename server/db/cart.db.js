@@ -10,7 +10,15 @@ function findAllCartItems(sessionId, db = database) {
   return db('cart').where('session_id', sessionId)
 }
 
+function removeCartItem(cartObject, db = database) {
+  return db('cart')
+    .where('id', cartObject.id)
+    .where('session_id', cartObject.session_id)
+    .del()
+}
+
 module.exports = {
   newCartItem,
-  findAllCartItems
+  findAllCartItems,
+  removeCartItem
 }
