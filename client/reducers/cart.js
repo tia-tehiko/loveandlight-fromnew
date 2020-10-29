@@ -1,26 +1,19 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions'
+import { ADD_TO_CART, REMOVE_FROM_CART, FETCH_CART_ITEMS_SUCCESS } from '../actions/cart.action'
 
-const initialState = JSON.parse(localStorage['items'])
+const initialState = []
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
+    case FETCH_CART_ITEMS_SUCCESS:
+      return action.payload.cartItems
+
     case ADD_TO_CART:
-      const cartItems = [...state, {
-        ...action.item,
-        scent: action.scent,
-        quantity: 1,
-      }]
-      return JSON.parse(updateLocalStorageCartItems(cartItems))
+      return [...state, { ...action.payload.item }]
 
     case REMOVE_FROM_CART:
-      const filteredCartItems = state.filter((item) => item.id !== action.id)
-      return JSON.parse(updateLocalStorageCartItems(filteredCartItems))
+      return state.filter((item) => item.id !== action.payload.id)
 
     default:
       return state
   }
-}
-
-function updateLocalStorageCartItems (items) {
-  return localStorage['items'] = JSON.stringify(items)
 }

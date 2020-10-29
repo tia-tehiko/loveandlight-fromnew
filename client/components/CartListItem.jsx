@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { removeFromCart } from '../actions'
+import { removeFromCart } from '../actions/cart.action'
 
 import formatCurrency from '../util'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addToCart } from '../actions'
-import { postToCart } from "../api"
+import { addToCart } from '../actions/cart.action'
+import { postToCart } from '../api'
 
 import ScentDropbox from './ScentDropbox'
 import formatCurrency from '../util'
@@ -16,8 +16,13 @@ class CandleDetails extends React.Component {
     this.setState({ scent: scent })
   }
 
-  handleClick = (item, scent) => {
-    this.props.dispatch(addToCart(item, this.state.scent))
+  handleClick = (item) => {
+    const { scent } = this.state
+    const { dispatch } = this.props
+
+    postToCart({...item, scent, quantity: 1})
+      .then((cartItem) => dispatch(addToCart(cartItem)))
+      .catch(console.log)
   }
 
   render() {
@@ -35,7 +40,7 @@ class CandleDetails extends React.Component {
           <p className='singleInfo'> {details} </p>
           <p>{gift_boxed}</p>
           <ScentDropbox chosenScent={this.chosenScent} />
-          <Link to='/cart'><button onClick={() => this.handleClick(this.props.candles, this.state.scent)} disabled={this.state.scent === false} className='productButton'>Add to Cart</button></Link>
+          <Link to='/cart'><button onClick={() => this.handleClick(this.props.candles)} disabled={this.state.scent === false} className='productButton'>Add to Cart</button></Link>
           <br />
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
