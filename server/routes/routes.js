@@ -21,10 +21,4 @@ router.get('/scents', (req, res) => {
   })
 })
 
-router.post('/cart', (req, res) => {
-  db.addToCart(req.body).then(() => {
-    res.status(201).send(req.body)
-  })
-})
-
 module.exports = router

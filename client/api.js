@@ -18,10 +18,10 @@ export function getScents() {
     .then((response) => response.body)
 }
 
-export function postToCart(data) {
+export function postToCart(item) {
   return request
     .post('/api/v1/cart')
-    .send({ item: data })
+    .send({ item })
     .then((response) => response.body)
 }
 
@@ -55,5 +55,43 @@ export function register (newUserDetails) {
     .then(res => {
       if(res.status === 200) return res.body
       throw new Error("failed to register user")
+    })
+}
+
+export function billingShipping (billingShippingDetails) {
+  return request
+    .post('/api/v1/billing-shipping')
+    .send(billingShippingDetails)
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to submit resources")
+    })
+}
+
+export function getBillingAndShippingDetails () {
+  return request
+    .get('/api/v1/billing-shipping')
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to get resources")
+    })
+}
+
+export function getCartItems () {
+  return request
+    .get('/api/v1/cart')
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to get resources")
+    })
+}
+
+export function deleteCartItem (id) {
+  return request
+    .delete('/api/v1/cart')
+    .send({ id })
+    .then(res => {
+      if(res.status === 201) return
+      throw new Error("failed to delete resource")
     })
 }

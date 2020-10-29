@@ -9,6 +9,8 @@ require('dotenv').config()
 
 const routes = require('./routes/routes')
 const auth = require('./routes/auth.routes')
+const billingShipping = require('./routes/billing.routes')
+const cart = require('./routes/cart.routes')
 
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
@@ -37,6 +39,8 @@ server.use(passport.initialize())
 server.use(passport.session())
 
 server.use('/api/v1/auth', auth)
+server.use('/api/v1/billing-shipping', billingShipping)
+server.use('/api/v1/cart', cart)
 server.use('/api/v1', routes)
 
 module.exports = server
