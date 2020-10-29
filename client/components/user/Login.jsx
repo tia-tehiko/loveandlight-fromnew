@@ -37,7 +37,7 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state
     const { loading } = this.props
-    console.log(loading)
+
     return (
       <form onSubmit={this.handleSubmit} className="form" id="login-form" noValidate>
         <div className="form-row">
