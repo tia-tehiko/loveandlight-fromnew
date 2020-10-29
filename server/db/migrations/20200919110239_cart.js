@@ -1,10 +1,16 @@
 exports.up = function (knex) {
   return knex.schema.createTable('cart', (table) => {
-    table.increments('id')
+    table.string('session_id')
+    table.string('id')
     table.string('name')
-    table.string('scent')
-    table.string('img')
+    table.string('size')
+    table.string('wick')
     table.integer('price')
+    table.integer('quantity')
+    table.string('img')
+    table.string('details')
+    table.string('gift_boxed')
+    table.string('scent')
   })
 }
 
