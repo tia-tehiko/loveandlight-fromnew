@@ -1,5 +1,5 @@
 const express = require('express')
-const { newCartItem, findAllCartItems } = require('../db/cart.db')
+const { newCartItem, findAllCartItems, removeCartItem } = require('../db/cart.db')
 
 const router = express.Router()
 
@@ -20,6 +20,17 @@ router.post('/', (req, res) => {
     })
     .catch(() => res.json({
       message: 'Couldn\'t add item to cart'
+    }))
+})
+
+router.delete('/', (req, res) => {
+  const { id } = req.body
+  const session_id = req.session.id
+
+  removeCartItem({ id, session_id })
+    .then(() => res.sendStatus(201))
+    .catch(() => res.json({
+      message: 'Couldn\'t remove item from cart'
     }))
 })
 
