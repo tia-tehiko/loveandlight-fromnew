@@ -85,3 +85,13 @@ export function getCartItems () {
       throw new Error("failed to get resources")
     })
 }
+
+export function deleteCartItem (id) {
+  return request
+    .delete('/api/v1/cart')
+    .send({ id })
+    .then(res => {
+      if(res.status === 201) return
+      throw new Error("failed to delete resource")
+    })
+}
