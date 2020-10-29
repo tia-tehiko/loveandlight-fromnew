@@ -6,6 +6,11 @@ function newCartItem(cartObject, db = database) {
     .then(() => db('cart').where('id', cartObject.id).first())
 }
 
+function findAllCartItems(sessionId, db = database) {
+  return db('cart').where('session_id', sessionId)
+}
+
 module.exports = {
-  newCartItem
+  newCartItem,
+  findAllCartItems
 }
