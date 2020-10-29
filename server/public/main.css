@@ -29,11 +29,24 @@ button:focus, select, option {
 /*everything above are default setting */
 
 .container {
-    width: 95%;
+    width: 80%;
     margin: 0 auto;
 }
 
+.infoContainer {
+    width: 80%;
+    margin: 50px auto;
+    line-height: 2;
+}
 
+.infoHeader { 
+    text-align: center;
+}
+
+.infoSubheader {
+    margin: 20px;
+    text-align: center;
+}
   
 .navcontainer{
     width: 100%;
@@ -215,11 +228,6 @@ select {
     letter-spacing: 2px;
     text-align-last: center;
 }
-
-option {
-    
-}
-
 
 
     
