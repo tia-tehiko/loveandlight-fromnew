@@ -11,7 +11,7 @@ export default function cartReducer(state = initialState, action) {
       return [...state, { ...action.payload.item }]
 
     case REMOVE_FROM_CART:
-      return state.filter((item) => item.id !== action.payload.id)
+      return state.filter((item) => (item.id === action.payload.item.id && item.scent !== action.payload.item.scent) || item.id !== action.payload.item.id)
 
     default:
       return state

@@ -21,7 +21,7 @@ class Cart extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.cartItems.map((item) => <CartListItem key={item.id} item={item} />)}
+                        {this.props.cartItems.map((item) => <CartListItem key={`${item.id}-${item.scent}`} item={item} />)}
                     </tbody>
                     <tfoot>
                         <tr>
