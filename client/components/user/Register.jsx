@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { navigateTo } from '../../actions/navigate.action'
 import { startUserAuthentication, userAuthenticationFailure, userAuthenticationSuccess } from '../../actions/user.action'
-import { register } from '../../api'
+import { login, register } from '../../api'
 
 class Register extends React.Component {
   state = {
@@ -20,11 +20,11 @@ class Register extends React.Component {
 
     dispatch(startUserAuthentication())
     register({ name, email, password })
+      .then(() => login({ email, password }))
       .then((responseObject) => {
         dispatch(userAuthenticationSuccess(responseObject))
         dispatch(navigateTo('Billing and shipping'))
       })
-      .catch((error) => dispatch(userAuthenticationFailure(error)))
   }
 
   handleChange = ({ target }) => {

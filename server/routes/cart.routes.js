@@ -24,10 +24,10 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-  const { id } = req.body
+  const { item } = req.body
   const session_id = req.session.id
 
-  removeCartItem({ id, session_id })
+  removeCartItem({ ...item, session_id })
     .then(() => res.sendStatus(201))
     .catch(() => res.json({
       message: 'Couldn\'t remove item from cart'

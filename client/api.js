@@ -86,10 +86,10 @@ export function getCartItems () {
     })
 }
 
-export function deleteCartItem (id) {
+export function deleteCartItem (item) {
   return request
     .delete('/api/v1/cart')
-    .send({ id })
+    .send({ item })
     .then(res => {
       if(res.status === 201) return
       throw new Error("failed to delete resource")
