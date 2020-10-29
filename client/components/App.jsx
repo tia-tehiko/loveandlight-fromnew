@@ -15,14 +15,21 @@ import CandleCare from './CandleCare'
 import Cart from './Cart'
 import Checkout from './checkout/Checkout'
 import { fetchSessionBegin, fetchSessionFailure, fetchSessionSuccess } from '../actions/session.action'
-import { fetchSession } from '../api'
+import { fetchSession, getCartItems } from '../api'
+import { fetchCartItemsBegin, fetchCartItemsFailure, fetchCartItemsSuccess } from '../actions/cart.action'
 
 export class App extends React.Component {
   componentDidMount () {
-    this.props.dispatch(fetchSessionBegin())
+    const { dispatch } = this.props
+    dispatch(fetchSessionBegin())
     fetchSession()
-      .then((responseJson) => this.props.dispatch(fetchSessionSuccess(responseJson)))
-      .catch((error) => this.props.dispatch(fetchSessionFailure(error)))
+      .then((responseJson) => dispatch(fetchSessionSuccess(responseJson)))
+      .catch((error) => dispatch(fetchSessionFailure(error)))
+    
+    dispatch(fetchCartItemsBegin())
+    getCartItems()
+      .then((cartItems) => dispatch(fetchCartItemsSuccess(cartItems)))
+      .catch((error) => dispatch(fetchCartItemsFailure(error)))
   }
 
   render() {

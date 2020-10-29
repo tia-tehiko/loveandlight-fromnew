@@ -76,3 +76,12 @@ export function getBillingAndShippingDetails () {
       throw new Error("failed to get resources")
     })
 }
+
+export function getCartItems () {
+  return request
+    .get('/api/v1/cart')
+    .then(res => {
+      if(res.status === 200) return res.body
+      throw new Error("failed to get resources")
+    })
+}
