@@ -17,14 +17,14 @@ export class Shipping extends React.Component {
           <p>
             We aim to ship your order to you within 12-48 hours from completion of
             your order
+        </p>
+          <p>
+            All postage prices are for orders up to 5kg, Large orders may incur extra charges.
         </p><br />
           <ShippingTable />
           <br />
           <p>
-            All postage prices are for orders up to 5kg, Large orders may incur extra charges.
-        </p><br />
-          <p>
-            We offer free local pick up from Wakerley (Brisbane) or alternatively
+            * We offer free local pick up from Wakerley (Brisbane) or alternatively
             at one of our market days on a Sunday (Redcliffe, Manly). You will be
             notified via email when your order is ready for pick up.
         </p><br />
