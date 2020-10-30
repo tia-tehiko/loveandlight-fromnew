@@ -10,7 +10,16 @@ import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 400
+    minWidth: 400,
+  },
+  row: {
+    fontFamily: 'Montserrat',
+    fontWeight: 'bolder',
+    backgroundColor: '#f4f4f4'
+  },
+  info: {
+    fontFamily: 'Montserrat',
+    fontWeight: 'bolder',
   }
 });
 
@@ -19,9 +28,9 @@ function createData(location, cost) {
 }
 
 const rows = [
-  createData("Brisbane Metro Area", "$9.00"),
-  createData("Australia Wide", "$14.00"),
-  createData("Local Pick Up", "Free")
+  createData("Brisbane Metro Area", "$9.00 AUD"),
+  createData("Australia Wide", "$14.00 AUD"),
+  createData("Local Pick Up", "Free *")
 ];
 
 export default function ShippingTable() {
@@ -32,17 +41,17 @@ export default function ShippingTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="center">LOCATION</TableCell>
-            <TableCell align="center">COST</TableCell>
+            <TableCell className={classes.row} align="center">LOCATION</TableCell>
+            <TableCell className={classes.row} align="center">COST</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.location}>
-              <TableCell component="th" scope="row" align="center">
+              <TableCell component="th" scope="row" align="center" className={classes.info}>
                 {row.location}
               </TableCell>
-              <TableCell align="center">{row.cost}</TableCell>
+              <TableCell align="center" className={classes.info}>{row.cost}</TableCell>
             </TableRow>
           ))}
         </TableBody>
