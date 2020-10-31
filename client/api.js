@@ -95,3 +95,13 @@ export function deleteCartItem (item) {
       throw new Error("failed to delete resource")
     })
 }
+
+export function createCheckoutSession () {
+  return request
+    .post('/api/v1/checkout')
+    .set('Content-Type', 'application/json')
+    .then((response) => {
+      if (response.status === 200) return response.body
+      throw new Error('Couldn\'t create a checkout session')
+    })
+}
