@@ -8,7 +8,7 @@ export default function cartReducer(state = initialState, action) {
       return action.payload.cartItems
 
     case ADD_TO_CART:
-      return [...state, { ...action.payload.item }]
+      return state.map((item) => (item.id === action.payload.item.id && item.scent === action.payload.item.scent) ? { ...item, quantity: action.payload.item.quantity } : item)
 
     case REMOVE_FROM_CART:
       return state.filter((item) => (item.id === action.payload.item.id && item.scent !== action.payload.item.scent) || item.id !== action.payload.item.id)
