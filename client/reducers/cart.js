@@ -20,6 +20,7 @@ export default function cartReducer(state = initialState, action) {
       }))
 
     case ADD_TO_CART:
+      if (!state.some(a => a.id === action.payload.item.id && a.scent === action.payload.item.scent)) return [...state, { ...action.payload.item }]
       return state.map((item) => (item.id === action.payload.item.id && item.scent === action.payload.item.scent) ? { ...item, quantity: action.payload.item.quantity } : item)
 
     case REMOVE_FROM_CART:
