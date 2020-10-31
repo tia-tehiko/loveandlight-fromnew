@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
   } catch (err) {
     res.json({
-      message: 'Couldn\'t add/upadate cart item'
+      message: ''
     })
   }
 })
