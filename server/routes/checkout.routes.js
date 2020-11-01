@@ -1,5 +1,5 @@
 const express = require('express')
-const { findAllCartItems } = require('../db/cart.db')
+const { findAllCartItems, deleteCartItems } = require('../db/cart.db')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 require('dotenv').config({
@@ -8,11 +8,17 @@ require('dotenv').config({
 
 const router = express.Router()
 
+router.get('/success', async (req, res) => {
+  const CHECKOUT_SESSION_ID = req.query.session_id
+  await deleteCartItems(req.session.id)
+  res.redirect(`/#/success?session_id=${CHECKOUT_SESSION_ID}`)
+})
+
 router.get('/', async (req, res) => {
   const {
-    sessionId
+    session_id
   } = req.query
-  const session = await stripe.checkout.sessions.retrieve(sessionId)
+  const session = await stripe.checkout.sessions.retrieve(session_id)
   res.send(session)
 })
 
@@ -34,7 +40,7 @@ router.post('/', async (req, res) => {
         quantity: item.quantity,
         description: item.scent
       })),
-      success_url: `${domainURL}/#/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${domainURL}/api/v1/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${domainURL}/#/cancelled`,
     })
 
