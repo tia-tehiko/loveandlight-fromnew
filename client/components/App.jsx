@@ -17,6 +17,7 @@ import Checkout from './checkout/Checkout'
 import { fetchSessionBegin, fetchSessionFailure, fetchSessionSuccess } from '../actions/session.action'
 import { fetchSession, getCartItems } from '../api'
 import { fetchCartItemsBegin, fetchCartItemsFailure, fetchCartItemsSuccess } from '../actions/cart.action'
+import Success from './Success'
 
 export class App extends React.Component {
   componentDidMount () {
@@ -37,6 +38,7 @@ export class App extends React.Component {
       <div className='container'>
         <Route path='/' component={Nav} />
         <Route exact path='/' component={LandingPage} />
+        <Route exact path='/success' component={Success} />
         <Route exact path='/candles' component={Candles} />
         <Route exact path='/candles/:name' component={CandleDetails} />
         <Route exact path='/diffusers' component={Diffusers} />
