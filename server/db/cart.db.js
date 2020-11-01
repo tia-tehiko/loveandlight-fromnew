@@ -41,10 +41,15 @@ function updateCartItem(cartObject, db = database) {
   .update(cartObject)
 }
 
+function deleteCartItems(session_id, db = database) {
+  return db('cart').where({ session_id }).del()
+}
+
 module.exports = {
   newCartItem,
   findAllCartItems,
   removeCartItem,
   findOne,
-  updateCartItem
+  updateCartItem,
+  deleteCartItems
 }
