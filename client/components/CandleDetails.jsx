@@ -20,7 +20,7 @@ class CandleDetails extends React.Component {
     const { scent } = this.state
     const { dispatch } = this.props
 
-    postToCart({...item, scent, quantity: 1})
+    postToCart({ ...item, scent, quantity: 1 })
       .then((cartItem) => dispatch(addToCart(cartItem)))
       .catch(console.log)
   }
@@ -33,7 +33,7 @@ class CandleDetails extends React.Component {
           <img src={img} className='singleImg'></img>
         </div>
         <div className='infoContainer'>
-          <h2 className='singleHeader'> {name}</h2>
+          <h2 className='singleHeader'>{name}</h2>
           <h4 className='singlePrice'>{formatCurrency(price)}</h4>
           <h4>{size}</h4>
           <h4>{wick}</h4><br />
@@ -45,7 +45,7 @@ class CandleDetails extends React.Component {
           <Link to='/candles'>
             <button className='productButton'>Back to Products</button>
           </Link>
-        </div>
+        </div>s
       </div >
     )
   }
