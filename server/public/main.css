@@ -196,6 +196,13 @@ h4 {
     margin: 20px;
 }
 
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .infoContainer {
     justify-content: flex-start;
     max-width: 60%;
@@ -331,9 +338,6 @@ section {
     text-align: center;
     margin: 20px:
 }
-
-
-
 
 .split {
     display: flex;
