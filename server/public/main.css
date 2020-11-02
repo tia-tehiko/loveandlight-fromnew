@@ -55,13 +55,13 @@ button:focus, select, option {
     display: flex;
     justify-content: space-around;
     transition: all .7s ease-in;
-    border-bottom: 1px solid rgb(187, 187, 187);
     position: sticky;
     top: 0;
     background-color:white;
     z-index: 1;
     margin-bottom: .5rem;
     margin-top: 2rem;
+    /* border-bottom: 1px solid rgb(187, 187, 187); */
 }
   
 .navtitle:hover {
@@ -69,6 +69,7 @@ button:focus, select, option {
     border-bottom: 1px solid rgb(187, 187, 187);
     padding-bottom: 3px;
     transition: transform 250ms ease-in-out;
+    /* border-bottom-style: inherit; */
 }
 
 .navtitle {
@@ -93,7 +94,11 @@ ul {
 }
 
 .pageHeader {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: sacramento;
+    text-align: center;
+    margin: 50px 0 10px 0;
+    font-size: 50px;
+    font-weight: 400;
 }
 
 .mainHeader {
@@ -117,6 +122,11 @@ ul {
 .headerBack {
     background:  linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
     padding: 20px;
+}
+
+.scentsList {
+    text-align: center;
+    line-height: 2;
 }
 
 h4 {
