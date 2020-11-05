@@ -12,6 +12,7 @@ const auth = require('./routes/auth.routes')
 const billingShipping = require('./routes/billing.routes')
 const cart = require('./routes/cart.routes')
 const checkout = require('./routes/checkout.routes')
+const products = require('./routes/products.routes')
 
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
@@ -49,6 +50,7 @@ server.use(
   })
 )
 
+server.use('/api/v1/products', products)
 server.use('/api/v1/checkout', checkout)
 server.use('/api/v1/auth', auth)
 server.use('/api/v1/billing-shipping', billingShipping)

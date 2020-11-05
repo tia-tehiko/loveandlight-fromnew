@@ -19,6 +19,7 @@ import { fetchSession, getCartItems } from '../api'
 import { fetchCartItemsBegin, fetchCartItemsFailure, fetchCartItemsSuccess } from '../actions/cart.action'
 import Success from './Success'
 import Cancelled from './Cancelled'
+import ProductForm from './products/ProductForm'
 
 export class App extends React.Component {
   componentDidMount () {
@@ -50,6 +51,7 @@ export class App extends React.Component {
         <Route exact path='/candlecare' component={CandleCare} />
         <Route exact path='/cart' component={Cart} />
         <Route exact path='/checkout' component={Checkout} />
+        <Route exact path='/product' component={ProductForm} />
         <Route path='/' component={Footer} />
       </div>
     )
