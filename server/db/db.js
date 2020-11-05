@@ -24,9 +24,16 @@ function addToCart(item, scent, db = connection) {
   })
 }
 
+function create(tableName, dataObject, db = connection) {
+  return db(tableName)
+    .insert(dataObject)
+    .then(() => db(tableName).where('id', dataObject.id).first())
+}
+
 module.exports = {
   getCandles,
   getDiffusers,
   getScents,
   addToCart,
+  create
 }
