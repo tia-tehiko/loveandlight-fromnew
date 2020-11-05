@@ -1,34 +1,66 @@
 import React from 'react'
 
+const initialState = {
+  name: '',
+  size: '',
+  wick: '',
+  price: '',
+  img: '',
+  details: '',
+  gift_boxed: '',
+  lifespan: '',
+  type: 'candles'
+}
+
 class ProductForm extends React.Component {
   state = {
     values: {
-      name: '',
-      size: '',
-      wick: '',
-      price: '',
-      img: '',
-      details: '',
-      gift_boxed: '',
-      lifespan: '',
-      type: 'candles'
+      ...initialState
     },
-    types: ['candles', 'diffusers']
+    types: ['candles', 'diffusers'],
+    disabled: false,
+    error: ''
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
+    const tempState = { ...this.state.values }
+    let count = 0;
 
-    fetch('/api/v1/products', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state.values)
-    })
-    .then(console.log)
-    .catch(console.log)
+    tempState.type === 'candles' ? tempState.lifespan = "" : tempState.wick = ""
+
+    for (const key in tempState) {
+      if (tempState[key] === "") count++
+    }
+
+    this.setState({ error: '' })
+
+    if (count - 1 === 0) {
+      if (this.state.disabled) return
+
+      this.setState({ disabled: true })
+      
+      fetch('/api/v1/products', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state.values)
+      })
+      .then(() => {
+        this.setState({ 
+          values: {
+            ...initialState
+          },
+          disabled: false,
+          error: ''
+        })
+      })
+      .catch(() => this.setState({ disabled: false, error: 'Server error!' }))
+    } else {
+      this.setState({ error: 'Fill out all fields before adding a new product!' })
+    }
   }
 
   handleChange = ({ target }) => {
@@ -37,7 +69,8 @@ class ProductForm extends React.Component {
       values: {
         ...this.state.values,
         [name]: value
-      }
+      },
+      error: ''
     })
   }
 
@@ -80,7 +113,8 @@ class ProductForm extends React.Component {
           <input type="text" name="gift_boxed" onChange={handleChange} value={gift_boxed} />
         </div>
         <p>
-          <input type="submit" className="btn" value="Add product" />
+          {this.state.error}
+          <input type="submit" className="btn" value="Add product" disabled={state.disabled} />
         </p>
       </form>
     )
