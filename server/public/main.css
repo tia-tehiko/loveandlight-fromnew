@@ -29,11 +29,24 @@ button:focus, select, option {
 /*everything above are default setting */
 
 .container {
-    width: 95%;
+    width: 80%;
     margin: 0 auto;
 }
 
+.infoContainer {
+    width: 80%;
+    margin: 50px auto;
+    line-height: 2;
+}
 
+.infoHeader { 
+    text-align: center;
+}
+
+.infoSubheader {
+    margin: 20px;
+    text-align: center;
+}
   
 .navcontainer{
     width: 100%;
@@ -42,13 +55,13 @@ button:focus, select, option {
     display: flex;
     justify-content: space-around;
     transition: all .7s ease-in;
-    border-bottom: 1px solid rgb(187, 187, 187);
     position: sticky;
     top: 0;
     background-color:white;
     z-index: 1;
     margin-bottom: .5rem;
     margin-top: 2rem;
+    /* border-bottom: 1px solid rgb(187, 187, 187); */
 }
   
 .navtitle:hover {
@@ -56,19 +69,36 @@ button:focus, select, option {
     border-bottom: 1px solid rgb(187, 187, 187);
     padding-bottom: 3px;
     transition: transform 250ms ease-in-out;
+    /* border-bottom-style: inherit; */
+}
+
+.navtitle {
+    line-height: 2;
+    margin-top: 10px;
 }
 
 .navlogo {
     height: 50px;
 }
 
+.subInfo {
+margin: 10px 0 10px 0;
+}
+
+label {
+    text-align: center;
+}
 
 ul {
     list-style-type: none;
 }
 
 .pageHeader {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: sacramento;
+    text-align: center;
+    margin: 50px 0 10px 0;
+    font-size: 50px;
+    font-weight: 400;
 }
 
 .mainHeader {
@@ -92,6 +122,11 @@ ul {
 .headerBack {
     background:  linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
     padding: 20px;
+}
+
+.scentsList {
+    text-align: center;
+    line-height: 2;
 }
 
 h4 {
@@ -161,6 +196,13 @@ h4 {
     margin: 20px;
 }
 
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .infoContainer {
     justify-content: flex-start;
     max-width: 60%;
@@ -215,11 +257,6 @@ select {
     letter-spacing: 2px;
     text-align-last: center;
 }
-
-option {
-    
-}
-
 
 
     
@@ -302,9 +339,6 @@ section {
     margin: 20px:
 }
 
-
-
-
 .split {
     display: flex;
     flex-wrap: wrap;
@@ -340,7 +374,30 @@ section {
 }
 
 .footerdiv {
+    text-align: left;
+}
+
+.socialItem {
+    display: inline-block;
+    margin: 3px 6px 0 0;
+}
+
+.socialLink {
+    display: table;
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
     text-align: center;
+    border-radius: 50%;
+    color: rgba(17, 11, 11, 0.8);
+    border: 1px solid rgba(255,255,255,0.8);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.socialFooter {
+    padding-inline-start: 0px;
 }
 
 .subButton, .subInput {
@@ -348,7 +405,7 @@ section {
     text-decoration: none;
     background: #ffffff;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0 10px 0;
     border: 1px solid #9e9e9e !important;
     display: inline-block;
     transition: all 0.4s ease 0s;
@@ -356,7 +413,10 @@ section {
     text-align: center;
     letter-spacing: 1px;
 }
-
+    
+input:focus, textarea:focus {
+    outline: none;
+}
 /* Scent Dropbox styling  */
 
   .dropdown-content {

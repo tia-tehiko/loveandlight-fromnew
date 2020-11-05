@@ -12,6 +12,7 @@ class Footer extends React.Component {
           <h3>MENU</h3>
           <Link to='/shipping'><h4 className='navtitle'>Shipping + Returns</h4></Link>
           <Link to='/candlecare'><h4 className='navtitle'>Candle Care</h4></Link>
+          <Link to='/scents'><h4 className='navtitle'>Scents</h4></Link>
         </div>
         <Contact />
         <Subscribe />

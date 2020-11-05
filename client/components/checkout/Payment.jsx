@@ -12,7 +12,7 @@ class Payment extends React.Component {
       .then((billingAndShippingDetails) => dispatch(billingAndShippingSuccess(billingAndShippingDetails)))
       .catch((errors) => dispatch(billingAndShippingFailure(errors)))
   }
-  
+
   render() {
     const { details, cartItems } = this.props
     return (
@@ -56,14 +56,14 @@ class Payment extends React.Component {
                 </tr>
               </thead>
               <tbody>
-              {cartItems.map((item) => (
-                <tr key={item.id}>
-                  <td><img src={item.img} style={{width: 50, height: 50}}/></td>
-                  <td>{item.name}</td>
-                  <td>{item.quantity}</td>
-                  <td>{formatCurrency(item.price)}</td>
-                </tr>
-              ))}
+                {cartItems.map((item) => (
+                  <tr key={item.id}>
+                    <td><img src={item.img} style={{ width: 50, height: 50 }} /></td>
+                    <td>{item.name}</td>
+                    <td>{item.quantity}</td>
+                    <td>{formatCurrency(item.price)}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

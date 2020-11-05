@@ -15,12 +15,12 @@ class Scents extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="infoContainer">
         <h1 className='pageHeader'>Scents Available</h1>
         <ul>
           {this.props.scents.map((scent) => {
             const { id, name } = scent
-            return <li key={id}>{name}</li>
+            return <li className="scentsList" key={id}>- {name}</li>
           })}
         </ul>
       </div>

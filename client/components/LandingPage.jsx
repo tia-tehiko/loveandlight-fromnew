@@ -15,7 +15,7 @@ export default class LandingPage extends React.Component {
 
         <main>
           <section className='featured'>
-            <div className='container'>
+            <div className='featuredcontainer'>
               <h2 className='section-title'>Featured Products</h2>
 
               <div className='split'>
