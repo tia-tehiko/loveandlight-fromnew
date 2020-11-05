@@ -9,6 +9,7 @@ exports.seed = function (knex) {
       return knex('candles').insert([
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HiB6QANwjB3rM4aLERaBmZQ',
           name: 'Carousel Mini',
           size: '65g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -20,6 +21,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HiB70ANwjB3rM4aT7N2EkBH',
           name: 'Carousel Large',
           size: '175g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -31,6 +33,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HjyeBANwjB3rM4amQA4H4OW',
           name: 'Teardrop',
           size: '230g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -42,6 +45,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HjyeZANwjB3rM4aNJTEPKUq',
           name: 'Vintage Clear',
           size: '300g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -53,6 +57,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1Hjyf6ANwjB3rM4a6Wm8heVe',
           name: 'Vintage Tiffany Blue',
           size: '300g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -64,6 +69,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HjyfdANwjB3rM4abdxm6SUn',
           name: 'Geo Large',
           size: '500g Natural Soy Wax',
           wick: 'Double Cotton Wick',
@@ -75,6 +81,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1Hjyg8ANwjB3rM4a2C2vB9mU',
           name: 'Renee Mauve Marble',
           size: '500g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -86,6 +93,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HjygYANwjB3rM4afrxuMWQe',
           name: 'Renee Pink Marble',
           size: '500g Natural Soy Wax',
           wick: 'Cotton Wick',
@@ -97,6 +105,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'CDL' }),
+          prid: 'price_1HjygwANwjB3rM4aTnwPEOmZ',
           name: 'Omg',
           size: '620g Natural Soy Wax',
           wick: 'Triple Cotton Wick',

@@ -1,6 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('diffusers', (table) => {
     table.string('id').primary()
+    table.string('prid')
     table.string('name')
     table.string('size')
     table.integer('price')

@@ -32,9 +32,24 @@ function findOne(cartObject, db = database) {
   }).first()
 }
 
+function updateCartItem(cartObject, db = database) {
+  return db('cart').where({
+    id: cartObject.id,
+    session_id: cartObject.session_id,
+    scent: cartObject.scent
+  })
+  .update(cartObject)
+}
+
+function deleteCartItems(session_id, db = database) {
+  return db('cart').where({ session_id }).del()
+}
+
 module.exports = {
   newCartItem,
   findAllCartItems,
   removeCartItem,
-  findOne
+  findOne,
+  updateCartItem,
+  deleteCartItems
 }

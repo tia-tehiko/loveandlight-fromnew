@@ -1,6 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('cart', (table) => {
     table.string('session_id')
+    table.string('prid')
     table.string('id')
     table.string('name')
     table.string('size')

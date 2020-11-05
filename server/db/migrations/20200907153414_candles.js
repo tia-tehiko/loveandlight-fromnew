@@ -2,6 +2,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('candles', (table) => {
     table.string('id').primary()
+    table.string('prid')
     table.string('name')
     table.string('size')
     table.string('wick')
