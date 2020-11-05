@@ -9,6 +9,7 @@ exports.seed = function (knex) {
       return knex('diffusers').insert([
         {
           id: guid({ prefix: 'DFS' }),
+          prid: 'price_1HjyjeANwjB3rM4aDNyE1gLZ',
           name: 'Reed Diffuser',
           size: '150ml - Comes with 10x Fibre Reed Sticks',
           price: 25,
@@ -19,6 +20,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'DFS' }),
+          prid: 'price_1Hjyk1ANwjB3rM4aL7quoaTa',
           name: 'Round Car Diffuser',
           size: '10ml',
           price: 10,
@@ -29,6 +31,7 @@ exports.seed = function (knex) {
         },
         {
           id: guid({ prefix: 'DFS' }),
+          prid: 'price_1HjykQANwjB3rM4amZE6vDp6',
           name: 'Circle Car Diffuser',
           size: '10ml',
           price: 10,
