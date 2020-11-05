@@ -47,6 +47,8 @@ router.post('/', async (req, res) => {
     res.send({
       id: session.id,
     })
+  } else {
+    res.sendStatus(400)
   }
 })
 

@@ -8,15 +8,31 @@ import CartListItem from './CartListItem'
 const stripe = Stripe('pk_test_51HiAx2ANwjB3rM4a9n7xcra9xWq1650jvlDQ2yD7nVlpP09A2BCoCbyHFj0ESM5ShqB8XvVMBy2l2Rlv8oMGT3P100MW23gU1H')
 
 class Cart extends React.Component {
+    state = {
+        disabled: false
+    }
+
+    componentDidUpdate() {
+        const { cartItems } = this.props
+        if (!cartItems.length && !this.state.disabled) {
+            this.setState({ disabled: true })
+        }
+    }
+
     handleClick = (event) => {
         event.preventDefault()
+        const { state } = this
 
+        if (state.disabled) return
+        
+        this.setState({ disabled: true })
         createCheckoutSession()
             .then((session) => {
                 stripe.redirectToCheckout({ sessionId: session.id })
+                this.setState({ disabled: false })
             })
-            .catch((error) => {
-                console.log(error)
+            .catch(() => {
+                this.setState({ disabled: false })
             })
     }
 
@@ -46,7 +62,7 @@ class Cart extends React.Component {
 
                 <p className="actions">
                     <Link to='/candles'><button>Continue shopping</button></Link>
-                    <button onClick={this.handleClick} role="link">Checkout</button>
+                    <button disabled={this.state.disabled} onClick={this.handleClick} role="link">Checkout</button>
                 </p>
 
             </div>
